@@ -1,10 +1,8 @@
 #include <cstring>
 #include <iostream>
-#include <limits>
 
 constexpr int cCommandCount{5};
 constexpr int cCommandSize{20};
-constexpr int cNotFound{-1};
 
 void Deposit(int& balance) {
   int k{};
@@ -39,8 +37,9 @@ void Inc(int& balance) {
 }
 
 int main() {
-  const char* command_names[cCommandCount]{
+  const char* commands[cCommandCount]{
       "deposit", "withdraw", "balance", "reset", "inc"};
+
   void (*operations[cCommandCount])(int&){
       Deposit, Withdraw, Balance, Reset, Inc};
 
@@ -52,21 +51,19 @@ int main() {
       break;
     }
 
-    int command_index{cNotFound};
+    int command_index{-1};
 
     for (int i{}; i < cCommandCount; ++i) {
-      if (std::strcmp(command, command_names[i]) == 0) {
+      if (std::strcmp(command, commands[i]) == 0) {
         command_index = i;
         break;
       }
     }
 
-    if (command_index == cNotFound) {
+    if (command_index == -1) {
       std::cout << "error\n";
     } else {
       operations[command_index](balance);
     }
-
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
   }
 }

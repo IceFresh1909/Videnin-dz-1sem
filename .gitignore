@@ -1,0 +1,11 @@
+*.o
+*.out
+a.out
+task1
+task2
+task3
+task4
+build/
+.DS_Store
+.idea/
+.vscode/
