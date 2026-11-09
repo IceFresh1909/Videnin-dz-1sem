@@ -1,0 +1,16 @@
+add bike B-1 City 4
+add cargo C-1 Cargo 9
+add ebike E-1 Electric 1.5 6
+add helmet H-1 Pro
+add dock D-1 Hub 10
+count_novice
+set_novice 9
+novice
+count_novice
+report
+add bike B-1 Duplicate 10
+add scooter X-1 Bad -1 8
+add bike X-2 Bad 11
+add bike X-3 BROKENbike 8
+report
+quit

@@ -1,0 +1,9 @@
+add scooter S-1 ModelX 2.5 8
+focus S-1
+show_focus
+remove S-1
+show_focus
+report
+add scooter S-2 BrOkEnWheel 2.0 9
+report
+quit
